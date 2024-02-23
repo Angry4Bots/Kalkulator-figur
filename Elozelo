@@ -1,0 +1,51 @@
+class Pracownicy:
+    pracownicy = 0
+    def __init__(self, imie, wiek, zarobki, lata_pracy):
+        self.imie = imie
+        self.wiek = wiek
+        self.zarobki = zarobki
+        self.lata_pracy = lata_pracy
+        Pracownicy.pracownicy += 1
+
+
+    def przedstaw_sie(self):
+        return f"Jestem {self.imie}, mam {self.wiek} lat. Zarabiam {self.zarobki} i pracuje {self.lata_pracy}."
+   
+class Sprzedawca(Pracownicy):
+    def __init__(self, imie, wiek, kasa, zarobki, lata_pracy):
+        super().__init__(imie, wiek, zarobki, lata_pracy)
+        self.kasa = kasa
+
+    def przedstaw_sie(self):
+        return super().przedstaw_sie() + f"Pracuje na klasie {self.kasa}."
+   
+
+
+class Zatrudniający(Pracownicy):
+    def __init__(self, imie, wiek, zarobki, lata_pracy, ilosc_osob_ktore_zatrudnil):
+        super().__init__(imie, wiek, zarobki, lata_pracy)
+        self.ilosc_osob_ktore_zatrudnil = ilosc_osob_ktore_zatrudnil
+
+
+    def przedstaw_sie(self):
+        return super().przedstaw_sie() + f"Zatrudniłem {self.ilosc_osob_ktore_zatrudnil}."
+    
+    def zatrudnianie(self):
+        print("wpisz swoje zalety")
+        zalety = str(input())
+        zalety = zalety
+        print("wpisz swoje wady")
+        wady = 
+        print("Widziałem twoje cv")
+    
+class Dostawca(Pracownicy):
+    def __init__(self, imie, wiek, auto_dostawcze, zarobki, lata_pracy):
+        super().__init__(imie, wiek, zarobki, lata_pracy)
+        self.auto_dostawcze = auto_dostawcze
+
+    def przedstaw_sie(self):
+        return super().przedstaw_sie() + f"Jeżdżę {self.auto_dostawcze}."
+    
+
+u = Zatrudniający(10, 10 , 10, 10, 10)
+print(u.przedstaw_sie())
